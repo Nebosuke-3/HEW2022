@@ -31,7 +31,7 @@ public class Player : MonoBehaviour {
         //‚µ‚á‚ª‚Þ
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            transform.localScale = new Vector3(9, 6, 9);
+            transform.localScale = new Vector3(9, 5, 9);
         }
         else
         {
