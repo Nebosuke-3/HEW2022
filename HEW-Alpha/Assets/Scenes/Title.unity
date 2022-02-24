@@ -2040,6 +2040,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4924740814571156709, guid: f32762949aff2fc4fbb71dbf1e55e491, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5933181661266387933, guid: 0956757e5f426b54d8f449207b206c7a, type: 2}
+    - target: {fileID: 4924740814571156709, guid: f32762949aff2fc4fbb71dbf1e55e491, type: 3}
       propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
       value: 1.1
       objectReference: {fileID: 0}
