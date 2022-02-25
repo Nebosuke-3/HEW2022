@@ -29,7 +29,7 @@ public class EnemyRay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 rayVec = playerTransform.position - this.transform.position; //敵からプレイヤーへの方向
+        Vector3 rayVec = (playerTransform.position + new Vector3(0.0f, -2f, 0.0f)) - this.transform.position; //敵からプレイヤーへの方向
 
 
         float sa = Mathf.Abs(Vector3.Angle(rayVec, this.transform.forward));
@@ -37,7 +37,7 @@ public class EnemyRay : MonoBehaviour
         if (sa < visionAngle / 2)
         {
             //Debug.Log("Casting Ray");
-            Ray ray = new Ray(this.transform.position + new Vector3(0.0f, 0.7f, 0.0f), rayVec);
+            Ray ray = new Ray(this.transform.position + new Vector3(0.0f, 2f, 0.0f), rayVec);
 
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, visionLength))
