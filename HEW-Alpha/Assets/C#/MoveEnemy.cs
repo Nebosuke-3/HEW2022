@@ -63,7 +63,7 @@ public class MoveEnemy : MonoBehaviour
         }
     }
 
-    /*void FixedUpdate()
+    void FixedUpdate()
     {
         if (count <= 180 && flug == 0)
             count++;
@@ -73,7 +73,7 @@ public class MoveEnemy : MonoBehaviour
 
             count = 0;
         }
-    }*/
+    }
 
 
     IEnumerator RotatePlayerSlowly(float distance)

@@ -58,31 +58,33 @@ public class EnemyShot : MonoBehaviour
         enemyObject.GetComponent<MoveEnemy>().shoot();
         yield return new WaitForSeconds(0.3f);
 
+        playerTransform = GameObject.Find("PlayerHitBox").GetComponent<Transform>();
+        Vector3 direction = Vector3.Normalize(playerTransform.position - transform.position);
         //GetComponentでRigidbodyを取得して弾をcloneで生成します。
         rb = Instantiate(bullet, transform.position, transform.rotation).GetComponent<Rigidbody>();
         //前方向にthrustの数字の分一度だけ力を加えます。
-        rb.AddForce(transform.forward * thrust, ForceMode.Impulse);
+        rb.AddForce(direction * thrust, ForceMode.Impulse);
         asou.Play();//銃声再生
 
         yield return new WaitForSeconds(0.04f);
         //GetComponentでRigidbodyを取得して弾をcloneで生成します。
         rb = Instantiate(bullet, transform.position, transform.rotation).GetComponent<Rigidbody>();
         //前方向にthrustの数字の分一度だけ力を加えます。
-        rb.AddForce(transform.forward * thrust, ForceMode.Impulse);
+        rb.AddForce(direction * thrust, ForceMode.Impulse);
         asou.Play();//銃声再生
 
         yield return new WaitForSeconds(0.04f);
         //GetComponentでRigidbodyを取得して弾をcloneで生成します。
         rb = Instantiate(bullet, transform.position, transform.rotation).GetComponent<Rigidbody>();
         //前方向にthrustの数字の分一度だけ力を加えます。
-        rb.AddForce(transform.forward * thrust, ForceMode.Impulse);
+        rb.AddForce(direction * thrust, ForceMode.Impulse);
         asou.Play();//銃声再生
 
         yield return new WaitForSeconds(0.04f);
         //GetComponentでRigidbodyを取得して弾をcloneで生成します。
         rb = Instantiate(bullet, transform.position, transform.rotation).GetComponent<Rigidbody>();
         //前方向にthrustの数字の分一度だけ力を加えます。
-        rb.AddForce(transform.forward * thrust, ForceMode.Impulse);
+        rb.AddForce(direction * thrust, ForceMode.Impulse);
         asou.Play();//銃声再生
 
         yield return new WaitForSeconds(0.2f);
