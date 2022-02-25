@@ -15,7 +15,7 @@ public class Player : MonoBehaviour {
 		void Start () {
 			controller = GetComponent <CharacterController>();
 			anim = gameObject.GetComponentInChildren<Animator>();
-            Cursor.visible = false;
+            //Cursor.visible = false;
          }
 
 		void Update (){
@@ -31,11 +31,11 @@ public class Player : MonoBehaviour {
         //‚µ‚á‚ª‚Þ
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            transform.localScale = new Vector3(9, 5, 9);
+            transform.localScale = new Vector3(8, 4, 8);
         }
         else
         {
-            transform.localScale = new Vector3(9, 10, 9);
+            transform.localScale = new Vector3(8, 9, 8);
         }
 
         if (controller.isGrounded){
