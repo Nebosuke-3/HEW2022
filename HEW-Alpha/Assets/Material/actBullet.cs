@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class actBullet : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class actBullet : MonoBehaviour
     //何かにぶつかったら
     void OnCollisionEnter(Collision col)
     {
-        if (col.transform.tag == "Player")
+        if (col.gameObject.tag == "Player")
         {
             //Destroy(col.gameObject);//相手を削除
 
@@ -33,7 +34,7 @@ public class actBullet : MonoBehaviour
             //col.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
             //キャラクターの位置を初期位置にする
-            col.transform.position = new Vector3(1.7f, 1.0f, -14.0f);
+            //col.transform.position = new Vector3(1.7f, 1.0f, -14.0f);
 
             Destroy(this.gameObject); //自身を削除
         }

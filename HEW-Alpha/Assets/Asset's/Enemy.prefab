@@ -2978,8 +2978,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 3534639911120941462, guid: 60fd6ae6013bf63498a3938071015fe7, type: 3}
-  thrust: 80
-  Rate: 80
+  thrust: 110
+  Rate: 60
 --- !u!82 &1866643258101872917
 AudioSource:
   m_ObjectHideFlags: 0

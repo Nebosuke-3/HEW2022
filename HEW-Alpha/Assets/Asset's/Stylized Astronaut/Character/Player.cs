@@ -1,24 +1,48 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
 		private Animator anim;
 		private CharacterController controller;
 
-		public float speed = 600.0f;
+		public float speed = 4.0f;
         public float jump;
-        public float turnSpeed = 400.0f;
+        public float turnSpeed = 150.0f;
 		private Vector3 moveDirection;
 		public float gravity = 20.0f;
+        public Text message;
 
-		void Start () {
+    void Start () {
 			controller = GetComponent <CharacterController>();
 			anim = gameObject.GetComponentInChildren<Animator>();
             //Cursor.visible = false;
          }
 
-		void Update (){
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            message.text = "PARALYZED!!!";
+            StartCoroutine(DelayCoroutine());
+        }
+    }
+
+    private IEnumerator DelayCoroutine()
+    {
+        speed = 0.0f;
+        turnSpeed = 0.0f;
+
+        // 1.5•b‘Ò‚Â
+        yield return new WaitForSeconds(1.5f);
+        message.text = "";
+        turnSpeed = 150.0f;
+        speed = 4.0f;
+    }
+
+    void Update (){
         //•à‚­
         if (Input.GetKey("w"))
         {
@@ -53,5 +77,5 @@ public class Player : MonoBehaviour {
 
                 moveDirection.y += Physics.gravity.y * Time.deltaTime; //í‚ÉyÀ•W‚ğd—Í‚Ì•ª‚¾‚¯“®‚©‚·(d—Íˆ—)
                 controller.Move(moveDirection * Time.deltaTime); //CharacterControlloer‚ğmoveDirection‚Ì•ûŒü‚É“®‚©‚·
-    }
+        }
 }
