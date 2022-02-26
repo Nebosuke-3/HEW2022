@@ -1468,8 +1468,8 @@ Camera:
   m_GameObject: {fileID: 1571611844}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2780,6 +2780,7 @@ MonoBehaviour:
   jump: 8
   turnSpeed: 150
   gravity: 20
+  message: {fileID: 0}
 --- !u!1 &6280902210445178232
 GameObject:
   m_ObjectHideFlags: 0
