@@ -35,8 +35,8 @@ public class Player : MonoBehaviour {
         speed = 0.0f;
         turnSpeed = 0.0f;
 
-        // 1.5•b‘Ò‚Â
-        yield return new WaitForSeconds(1.5f);
+        // 2•b‘Ò‚Â
+        yield return new WaitForSeconds(2.0f);
         message.text = "";
         turnSpeed = 150.0f;
         speed = 4.0f;
