@@ -55,7 +55,7 @@ public class Player : MonoBehaviour {
         //‚µ‚á‚ª‚Þ
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            transform.localScale = new Vector3(8, 3, 8);
+            transform.localScale = new Vector3(8, 4, 8);
         }
         else
         {
