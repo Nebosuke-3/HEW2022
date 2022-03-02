@@ -22,7 +22,6 @@ public class LookAtPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Cursor.visible = false; //カーソルを表示
         this.transform.LookAt(playerTransform.position);//プレイヤーのほうを見る
     }
 }
