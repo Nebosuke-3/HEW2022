@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class Pause : MonoBehaviour
     //　ポーズUIのインスタンス
     private GameObject pauseUIInstance;
 
+    void Start()
+    {
+        SceneManager.sceneUnloaded += SceneUnloaded;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -26,5 +31,11 @@ public class Pause : MonoBehaviour
                 Time.timeScale = 1f;
             }
         }
+    }
+
+    void SceneUnloaded(Scene thisScene)
+    {
+        Destroy(pauseUIInstance);
+        Time.timeScale = 1f;
     }
 }
